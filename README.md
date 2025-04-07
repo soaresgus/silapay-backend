@@ -34,7 +34,13 @@ DATABASE_URL="mysql://root:root@localhost:3306/silapay"
 docker compose up --build
 ```
 
-### 4. Acesse a API
+### 4. Execute as migration para criar a tabela no banco
+
+```bash
+npx prisma migrate deploy
+```
+
+### 5. Acesse a API
 
 A API ficará disponível em:
 📍 `http://localhost:3000`

@@ -8,6 +8,11 @@ services:
       - "3306:3306"
     volumes:
       - db-data:/var/lib/mysql
+    healthcheck:
+      test: [ "CMD", "mysqladmin", "ping", "-h", "localhost" ]
+      interval: 5s
+      timeout: 3s
+      retries: 5
 
   backend:
     build: .
@@ -18,7 +23,9 @@ services:
     volumes:
       - .:/app
     depends_on:
-      - db
+      db:
+        condition: service_healthy
+    command: npm run start:dev
 
 volumes:
   db-data:
