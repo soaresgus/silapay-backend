@@ -19,7 +19,7 @@ API RESTful construída com **NestJS**, **Prisma** e **MariaDB**, para cadastro 
 
 ```bash
 git clone https://github.com/soaresgus/silapay-backend.git
-cd seu-repo-backend
+cd silapay-backend
 ```
 
 ### 2. Crie o arquivo `.env`
